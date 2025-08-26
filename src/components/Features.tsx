@@ -21,10 +21,10 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="bg-black py-[72px] text-white">
+    <div className="bg-black py-[72px] text-white sm:py-24">
       <div className="container">
         <div className="flex items-center justify-center flex-col">
-          <h2 className="font-bold text-center text-5xl tracking-tighter ">
+          <h2 className="font-bold text-center text-5xl sm:text-6xl tracking-tighter ">
             Everything you need
           </h2>
           <p className="text-xl text-center mt-5 max-w-xl text-white/70">
