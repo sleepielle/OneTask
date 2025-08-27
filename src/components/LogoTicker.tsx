@@ -1,19 +1,8 @@
+"use client";
 import Image from "next/image";
-import acmeLogo from "../assets/images/acme.png";
-import quantumLogo from "../assets/images/quantum.png";
-import echoLogo from "../assets/images/echo.png";
-import celestialLogo from "../assets/images/celestial.png";
-import pulseLogo from "../assets/images/pulse.png";
-import apexLogo from "../assets/images/apex.png";
-
-const images = [
-  { src: acmeLogo, alt: "Acme Logo" },
-  { src: quantumLogo, alt: "Quantum Logo" },
-  { src: echoLogo, alt: "Echo Logo" },
-  { src: celestialLogo, alt: "Celestial Logo" },
-  { src: pulseLogo, alt: "Pulse Logo" },
-  { src: apexLogo, alt: "Apex Logo" },
-];
+import React from "react";
+import { motion } from "framer-motion";
+import { images } from "@/types";
 
 export const LogoTicker = () => {
   return (
@@ -24,24 +13,34 @@ export const LogoTicker = () => {
             Trusted by the worlds most innovative teams
           </h2>
           <div
-            className="
+            className="flex 
             relative overflow-hidden mt-9
-            before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-5
-            before:bg-gradient-to-r before:from-black before:to-black/0
-            after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-5
-            after:bg-gradient-to-l after:from-black after:to-black/0
+            before:content-[''] before:absolute before:inset-y-0 before:left-0  before:w-20 
+            before:bg-gradient-to-r before:from-black before:to-black/0 before:z-10
+             after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-20
+            after:bg-gradient-to-l after:from-black after:to-black/0 sm:after:w-80 sm:before:w-80 
           "
           >
-            <div className="flex gap-16">
-              {images.map((logo) => (
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  key={logo.alt}
-                  className="flex-none h-8 w-auto"
-                />
+            {/**if there is a jump, the problem is with the gaps */}
+            <motion.div
+              className="flex flex-none gap-16 pr-16  "
+              transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+              initial={{ translateX: 0 }}
+              animate={{ translateX: "-50%" }}
+            >
+              {Array.from({ length: 2 }).map((_, i) => (
+                <React.Fragment key={i}>
+                  {images.map((logo) => (
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      key={logo.alt}
+                      className="flex-none h-8 w-auto"
+                    />
+                  ))}
+                </React.Fragment>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
