@@ -34,7 +34,7 @@ export const Features = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-16">
+        <div className="flex flex-col sm:flex-row gap-4 mt-16 sm:px-10">
           {features.map((feature) => (
             <div
               key={feature.title}
