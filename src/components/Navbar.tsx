@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "../assets/images/logosaas.png";
 import MenuIcon from "../assets/icons/menu.svg";
+import Button from "./Button";
 
 export const Navbar = () => {
   return (
@@ -20,38 +21,41 @@ export const Navbar = () => {
 
           <nav className=" items-center gap-6 hidden sm:flex">
             <a
-              href="#"
+              href="#about"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >
               About
             </a>
             <a
-              href="#"
+              href="#features"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >
               Features
             </a>
             <a
-              href="#"
+              href="#showcase"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >
-              Updates
+              Showcase
             </a>
             <a
-              href="#"
+              href="#faq"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >
-              Help
+              FAQ
             </a>
+
             <a
-              href="#"
+              href="#contact"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >
-              Customers
+              Contact
             </a>
-            <button className="bg-white py-2 px-4 rounded-lg">
-              Get for free
-            </button>
+
+            <Button
+              classname={"bg-white py-2 px-4 rounded-lg"}
+              text={"Get for free"}
+            />
           </nav>
         </div>
       </div>

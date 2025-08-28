@@ -3,7 +3,7 @@ import Feature from "./Feature";
 
 export const Features = () => {
   return (
-    <div className="bg-black py-[72px] text-white sm:py-24 ">
+    <div id="features" className="bg-black py-[72px] text-white sm:py-24 ">
       <div className="container">
         <div className="flex items-center justify-center flex-col">
           <h2 className="font-bold text-center text-5xl sm:text-6xl tracking-tighter ">

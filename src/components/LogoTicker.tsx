@@ -6,7 +6,7 @@ import { images } from "@/types";
 
 export const LogoTicker = () => {
   return (
-    <div className="bg-black py-[72px]">
+    <div id="about" className="bg-black py-[72px]">
       <div className="container">
         <div className="flex items-center justify-center flex-col pt-8 ">
           <h2 className="text-white/70 text-center m-8 text-xl">

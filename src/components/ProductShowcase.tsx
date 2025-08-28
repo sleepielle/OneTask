@@ -21,7 +21,10 @@ export const ProductShowcase = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (
-    <div className="bg-black py-[72px] bg-[linear-gradient(to_bottom,#000,#4e258c)]">
+    <div
+      id="showcase"
+      className="bg-black py-[72px] bg-[linear-gradient(to_bottom,#000,#4e258c)]"
+    >
       <div className="container">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-white font-bold text-5xl tracking-tighter text-center sm:text-6xl">

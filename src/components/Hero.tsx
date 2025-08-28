@@ -3,6 +3,7 @@ import Image from "next/image";
 import CursorImage from "../assets/images/cursor.png";
 import MessageImage from "../assets/images/message.png";
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 const MotionImage = motion(Image);
 
@@ -67,9 +68,13 @@ export const Hero = () => {
             Celebrate the joy of accomplishment with an app designed to track
             progress, motivate your efforts, and celebrate your success
           </p>
-          <button className="bg-white text-black rounded-lg font-medium mt-8 py-3 px-5">
-            Get for free
-          </button>
+
+          <Button
+            classname={
+              "bg-white text-black rounded-lg font-medium mt-8 py-3 px-5 "
+            }
+            text={"Get for free"}
+          />
         </div>
       </div>
     </div>
