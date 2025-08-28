@@ -35,7 +35,7 @@ export const ProductShowcase = () => {
           <motion.div
             style={{
               opacity: opacity,
-              rotateX: rotateX,
+              rotateY: rotateX,
               transformPerspective: "800px",
               transition: "ease",
             }}

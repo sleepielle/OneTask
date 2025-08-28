@@ -1,8 +1,9 @@
 "use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import PlusIcon from "../assets/icons/plus.svg";
 import MinusIcon from "../assets/icons/minus.svg";
-
-import { useState } from "react";
 
 const AccordionItem = ({
   question,
@@ -27,13 +28,18 @@ const AccordionItem = ({
         {!isOpen ? <PlusIcon /> : <MinusIcon />}
       </div>
 
-      <div
-        className={`text-white/70 mt-5  text-justify max-w-lg ${
-          isOpen ? "flex" : " hidden"
-        }`}
-      >
-        {answer}
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+            animate={{ opacity: 1, height: "auto", marginTop: "16px" }}
+            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+            className={`text-white/70 text-justify max-w-lg`}
+          >
+            {answer}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
