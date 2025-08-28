@@ -1,7 +1,25 @@
+"use client";
 import Image from "next/image";
 import appScreen from "../assets/images/app-screen.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export const ProductShowcase = () => {
+  const appImage = useRef<HTMLImageElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: appImage,
+    offset: ["start end", "end end"],
+  });
+
+  useEffect(() => {
+    scrollYProgress.on("change", (latestValue) =>
+      console.log("latest value", latestValue)
+    );
+  });
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
   return (
     <div className="bg-black py-[72px] bg-[linear-gradient(to_bottom,#000,#4e258c)]">
       <div className="container">
@@ -14,13 +32,21 @@ export const ProductShowcase = () => {
             your progress, motivate your efforts, and celebrate your successes,
             one task at a time.
           </p>
-          <div className="mt-12">
+          <motion.div
+            style={{
+              opacity: opacity,
+              rotateX: rotateX,
+              transformPerspective: "800px",
+              transition: "ease",
+            }}
+          >
             <Image
+              ref={appImage}
               src={appScreen}
-              alt="app-screen"
-              className="border border-[#4e258c] hover:border-white/50 rounded-xl transition-transform duration-300 ease-out [transform:perspective(1400px)] hover:[transform:perspective(1400px)_rotateY(6deg)]"
+              alt="product-screenshot"
+              className="mt-14 border border-[#4e258c] hover:border-white/50 rounded-xl hover:brightness-150 transition duration-300 ease-in-out"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
