@@ -17,7 +17,7 @@ export const ProductShowcase = () => {
     );
   });
 
-  const rotateX = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotateX = useTransform(scrollYProgress, [0, 1], [35, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   return (

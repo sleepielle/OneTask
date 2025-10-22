@@ -21,12 +21,6 @@ export const Navbar = () => {
 
           <nav className=" items-center gap-6 hidden sm:flex">
             <a
-              href="#about"
-              className="text-opacity-60 text-white hover:text-opacity-100 transition"
-            >
-              About
-            </a>
-            <a
               href="#features"
               className="text-opacity-60 text-white hover:text-opacity-100 transition"
             >

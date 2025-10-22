@@ -9,14 +9,14 @@ const MotionImage = motion(Image);
 
 export const Hero = () => {
   return (
-    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] py-[72px] sm:py-[90px] relative overflow-clip">
-      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px]  rounded-[100%] bg-black  left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)]  top-[calc(100%-96px)] sm:top-[calc(100%-120px)] "></div>
+    <div className="bg-black text-white bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] py-[72px] sm:py-[90px] relative overflow-clip ">
+      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px]  rounded-[100%] bg-black  left-1/2 -translate-x-1/2 border border-[#B48CDE] bg-[radial-gradient(closest-side,#000_82%,#9560EB)]  top-[calc(100%-96px)] sm:top-[calc(100%-120px)]  "></div>
 
       <div className="container flex flex-col relative">
         <div className="flex items-center justify-center">
           <a
             href="#"
-            className="inline-flex gap-3 rounded-lg border border-white/30  px-2 py-1"
+            className="inline-flex gap-3 rounded-lg border border-white/30  px-2 py-1 hover:border-white/70"
           >
             <span className="bg-[linear-gradient(to_right,#F87AFF,#FB93D0,#FFDD99,#C3F0B2,#2FD8FE)]  bg-clip-text [-webkit-background-clip:text] text-transparent  text-opacity-50">
               Version 2.0 is here
@@ -36,7 +36,7 @@ export const Hero = () => {
             <MotionImage
               src={CursorImage}
               alt="cursor-image-3d"
-              className="absolute right-[476px] top-[108px] hidden sm:inline"
+              className="absolute right-[476px] top-[108px] hidden sm:inline hover:opacity-90"
               height={200}
               width={200}
               drag
@@ -49,14 +49,14 @@ export const Hero = () => {
             <MotionImage
               src={MessageImage}
               alt="cursor-image-3d"
-              className="absolute left-[490px] top-[70px] hidden sm:inline"
+              className="absolute left-[490px] top-[70px] hidden sm:inline hover:opacity-90"
               height={200}
               width={200}
               drag
               dragConstraints={{
-                left: 100,
+                left: -80,
                 right: 160,
-                top: 100,
+                top: -100,
                 bottom: 100,
               }}
               dragElastic={0.15}
