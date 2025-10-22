@@ -1,5 +1,5 @@
 import { features } from "@/types";
-import Feature from "../components/Feature";
+import Feature from "./Feature";
 
 export const Features = () => {
   return (

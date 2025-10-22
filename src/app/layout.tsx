@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
-
-const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "One Task",
@@ -12,12 +9,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={clsx(dmSans.className, "antialiased")}>{children}</body>
+      <body className={clsx("antialiased")}>{children}</body>
     </html>
   );
 }
